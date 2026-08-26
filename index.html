@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Suci ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MUSIC -->
+    <audio id="music" loop>
+        <source src="music/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-btn" onclick="toggleMusic()">♫</button>
+
+
+    <!-- =====================================================
+         PAGE 1 — OPENING
+    ====================================================== -->
+
+    <section class="page active" id="page1">
+
+        <div class="opening">
+
+            <p class="little-text">
+                A little something for you...
+            </p>
+
+            <h1>
+                Hey, cinerjo
+            </h1>
+
+            <button class="main-btn" onclick="goToPage(2)">
+                Open it 
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 2 — PASSWORD
+    ====================================================== -->
+
+    <section class="page" id="page2">
+
+        <div class="password-box">
+
+            <div class="lock">
+                🔐
+            </div>
+
+            <h2>
+                This little world is only for you
+            </h2>
+
+            <p>
+                Enter the password:
+            </p>
+
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Enter password"
+            >
+
+            <button class="main-btn" onclick="checkPassword()">
+                Unlock 
+            </button>
+
+            <p class="error" id="passwordError"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 3 — LOADING
+    ====================================================== -->
+
+    <section class="page" id="page3">
+
+        <div class="loading-page">
+
+            <h1>
+                Hey girl!
+            </h1>
+
+            <div class="cake">
+                🎂
+            </div>
+
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <p>
+                Tunggu sebentar yaa
+            </p>
+
+        </div>
+
+    </section>
+
+
+        <!-- =====================================================
+         PAGE 3.5 — OCTOBER 2026 CALENDAR
+    ====================================================== -->
+
+    <section class="page" id="calendarPage">
+
+        <div class="calendar-page">
+
+            <p class="eyebrow">
+                A SPECIAL DAY
+            </p>
+
+            <h1>
+                October 2026 ♡
+            </h1>
+
+            <p class="calendar-subtitle">
+                Il y a un jour spécial ce mois-ci...
+            </p>
+
+
+            <div class="calendar-box">
+
+                <div class="calendar-header">
+                    <span>October</span>
+                    <span>2026</span>
+                </div>
+
+
+                <div class="calendar-weekdays">
+
+                    <span>Sun</span>
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+
+                </div>
+
+
+                <div class="calendar-days">
+
+                    <!-- September 27–30 -->
+                    <span class="empty"></span>
+                    <span class="empty"></span>
+                    <span class="empty"></span>
+                    <span class="empty"></span>
+
+
+                    <!-- October 1–3 -->
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+
+
+                    <!-- October 4–10 -->
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+
+
+                    <!-- October 11–17 -->
+                    <span>11</span>
+                    <span>12</span>
+                    <span>13</span>
+                    <span>14</span>
+                    <span>15</span>
+                    <span>16</span>
+
+                    <!-- 17 OCTOBER 2026 — SATURDAY -->
+                    <span class="special-day">
+                        <span class="circle-date">17</span>
+                        <small>♡</small>
+                    </span>
+
+
+                    <!-- October 18–24 -->
+                    <span>18</span>
+                    <span>19</span>
+                    <span>20</span>
+                    <span>21</span>
+                    <span>22</span>
+                    <span>23</span>
+                    <span>24</span>
+
+
+                    <!-- October 25–31 -->
+                    <span>25</span>
+                    <span>26</span>
+                    <span>27</span>
+                    <span>28</span>
+                    <span>29</span>
+                    <span>30</span>
+                    <span>31</span>
+
+                </div>
+
+            </div>
+
+
+            <p class="special-date">
+                It's your birthday 🎂
+            </p>
+
+
+            <button
+                class="next-btn"
+                onclick="goToPage(4)"
+            >
+                Continue →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 4 — FIRST LETTER
+    ====================================================== -->
+
+    <section class="page" id="page4">
+
+        <div class="letter-page">
+
+            <p class="eyebrow">
+                BIRTHDAY LETTER
+            </p>
+
+            <h1>
+                Tu as une nouvelle notification. 💌
+            </h1>
+
+            <div
+                class="envelope"
+                id="envelope1"
+                onclick="openLetter1()"
+            >
+
+                <div class="envelope-flap"></div>
+
+                <div class="envelope-heart">
+                    ♡
+                </div>
+
+            </div>
+
+            <p
+                class="click-hint"
+                id="hint1"
+            >
+                Click the envelope
+            </p>
+
+
+            <div
+                class="letter-paper"
+                id="letter1"
+            >
+
+                <h2>
+                    WOIII, UDAH 18 AJA 😭
+                </h2>
+
+                <div id="typedLetter1"></div>
+
+                <button
+                    class="next-btn"
+                    onclick="goToPage(5)"
+                >
+                    Continue →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     PAGE 5 — MEMORY ALBUM
+====================================================== -->
+
+<section class="page" id="page5">
+
+    <div class="memory-page">
+
+        <p class="eyebrow">
+            FROM THEN TO NOW
+        </p>
+
+        <h1>
+            Album 18 memories ♡
+        </h1>
+
+        <p class="memory-sub">
+            Dari bocil sampai jadi kambing umur 18 tahun
+        </p>
+
+
+        <!-- ================= ALBUM ================= -->
+
+        <div class="album">
+
+            <!-- ALBUM PAGE 1 -->
+            <div class="album-page active-album" data-page="1">
+
+                <div class="album-title">
+                    Little moments 
+                </div>
+
+                <div class="polaroid-wall">
+
+                    <div class="polaroid photo1">
+                        <img src="images/suci1.jpeg">
+                        <span>little uci</span>
+                    </div>
+
+                    <div class="polaroid photo2">
+                        <img src="images/suci2.jpeg">
+                        <span></span>
+                    </div>
+
+                    <div class="polaroid photo3">
+                        <img src="images/suci3.jpeg">
+                        <span>gaya metal</span>
+                    </div>
+
+                    <div class="polaroid photo4">
+                        <img src="images/suci4.jpeg">
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALBUM PAGE 2 -->
+            <div class="album-page" data-page="2">
+
+                <div class="album-title">
+                    With the people pt.1
+                </div>
+
+                <div class="polaroid-wall">
+
+                    <div class="polaroid photo5">
+                        <img src="images/suci5.jpeg">
+                        <span></span>
+                    </div>
+
+                    <div class="polaroid photo6">
+                        <img src="images/suci6.jpeg">
+                        <span></span>
+                    </div>
+
+                    <div class="polaroid photo7">
+                        <img src="images/suci7.jpeg">
+                        <span></span>
+                    </div>
+
+                    <div class="polaroid photo8">
+                        <img src="images/suci8.jpeg">
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALBUM PAGE 3 -->
+            <div class="album-page" data-page="3">
+
+                <div class="album-title">
+                    With the people pt.2 ♡
+                </div>
+
+                <div class="polaroid-wall">
+
+                    <div class="polaroid">
+                        <img src="images/suci9.jpeg">
+                        <span></span>
+                    </div>
+
+                    <div class="polaroid">
+                        <img src="images/suci10.jpeg">
+                        <span></span>
+                    </div>
+
+                    <div class="polaroid">
+                        <img src="images/suci11.jpeg">
+                        <span></span>
+                    </div>
+
+                    <div class="polaroid">
+                        <img src="images/suci12.jpeg">
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALBUM PAGE 4 -->
+            <div class="album-page" data-page="4">
+
+                <div class="album-title">
+                    Moments worth keeping 
+                </div>
+
+                <div class="polaroid-wall">
+
+                    <div class="polaroid">
+                        <img src="images/suci13.jpeg">
+                        <span></span>
+                    </div>
+
+                    <div class="polaroid">
+                        <img src="images/suci14.jpeg">
+                        <span></span>
+                    </div>
+
+                    <div class="polaroid">
+                        <img src="images/suci15.jpeg">
+                        <span></span>
+                    </div>
+
+                    <div class="polaroid">
+                        <img src="images/suci16.jpeg">
+                        <span></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALBUM PAGE 5 — LAST PAGE -->
+            <div class="album-page last-album" data-page="5">
+
+                <div class="album-title">
+                    One last memory 
+                </div>
+
+                <div class="final-memory">
+
+                    <img src="images/suci17.jpeg">
+
+                    <span>
+                        one more story...
+                    </span>
+
+                </div>
+
+
+                <div class="favorite-memory">
+
+                    <img src="images/suci18.jpeg">
+
+                    <p>
+                        And this one...<br>
+                        will always be one of my favorites
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ALBUM CONTROLS ================= -->
+
+        <div class="album-controls">
+
+            <button
+                class="album-btn"
+                id="prevAlbum"
+                onclick="previousAlbum()"
+            >
+                ←
+            </button>
+
+            <span id="albumPageNumber">
+                1 / 5
+            </span>
+
+            <button
+                class="album-btn"
+                id="nextAlbum"
+                onclick="nextAlbum()"
+            >
+                →
+            </button>
+
+        </div>
+
+
+        <!-- ================= CONTINUE ================= -->
+
+        <button
+            class="next-btn album-continue"
+            id="albumContinue"
+            onclick="goToPage(6)"
+        >
+            There's another letter →
+        </button>
+
+    </div>
+
+</section>
+
+
+    <!-- =====================================================
+         PAGE 6 — SECOND LETTER
+    ====================================================== -->
+
+    <section class="page" id="page6">
+
+        <div class="second-letter">
+
+            <p class="eyebrow">
+                A LITTLE MORE
+            </p>
+
+            <div class="paper">
+
+                <h2>
+                    HAPPY BIRTHDAY
+                </h2>
+
+                <div id="typedLetter2"></div>
+
+            </div>
+
+            <button
+                class="next-btn"
+                onclick="goToPage(7)"
+            >
+                One little wish →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 7 — A LITTLE WISH
+    ====================================================== -->
+
+    <section class="page" id="page7">
+
+        <div class="wish-page">
+
+            <p class="eyebrow">
+                A LITTLE WISH
+            </p>
+
+            <h2 id="wishIntro">
+                Before you go...
+            </h2>
+
+            <p id="wishIntro2">
+                Ada satu hal kecil untukmu
+            </p>
+
+
+            <div class="birthday-cake">
+
+                <div class="cake-top">
+
+                    <div class="candle c1"></div>
+                    <div class="candle c2"></div>
+                    <div class="candle c3"></div>
+                    <div class="candle c4"></div>
+                    <div class="candle c5"></div>
+                    <div class="candle c6"></div>
+                    <div class="candle c7"></div>
+                    <div class="candle c8"></div>
+                    <div class="candle c9"></div>
+                    <div class="candle c10"></div>
+                    <div class="candle c11"></div>
+                    <div class="candle c12"></div>
+                    <div class="candle c13"></div>
+                    <div class="candle c14"></div>
+                    <div class="candle c15"></div>
+                    <div class="candle c16"></div>
+                    <div class="candle c17"></div>
+                    <div class="candle c18"></div>
+
+                </div>
+
+                <div class="cake-body">
+                    <span>18</span>
+                </div>
+
+            </div>
+
+
+            <div class="wish-text" id="wishText">
+
+                <p>
+                    Make a wish, teman. 
+                </p>
+
+            </div>
+
+
+            <div
+                class="countdown"
+                id="countdown"
+            >
+            </div>
+
+
+            <button
+                class="blow-btn"
+                id="blowButton"
+                onclick="blowCandle()"
+            >
+                Tap me
+            </button>
+
+
+            <div
+                class="wish-result"
+                id="wishResult"
+            >
+
+                <h2>
+                    Harapanmu sudah terkirim ✨
+                </h2>
+
+                <p>
+                    I hope it comes true
+                </p>
+
+                <button
+                    class="next-btn"
+                    onclick="goToPage(8)"
+                >
+                    One last thing →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAGE 8 — ONE LAST THING
+    ====================================================== -->
+
+    <section class="page" id="page8">
+
+        <div class="final-page">
+
+            <div class="final-sparkle">
+                ✦
+            </div>
+
+            <p class="eyebrow">
+                ONE LAST THING
+            </p>
+
+            <h1>
+                Thank you, Suci.
+            </h1>
+
+            <div class="final-letter">
+
+                <p>
+                    Terima kasih yaa,
+                    sudah mau jadi temanku.
+                </p>
+
+                <p>
+                    Terima kasih udah mau bertahan sejauh ini,
+                    udah mau ngeluangin waktu kamu,
+                    dan terima kasih untuk semuanya.
+                </p>
+
+                <p>
+                    Kamu kan sekarang udah 18 tahun nih.
+                </p>
+
+                <p>
+                    Jadi mulai sekarang harus makin dewasa ya.
+                </p>
+
+                <p class="dramatic">
+                    ...
+                </p>
+
+                <p class="joke">
+                    TAPI JANGAN TERLALU DEWASA JUGA 😭
+                </p>
+
+                <p>
+                    Tetap jadi Suci yang aku kenal,
+                    yang suka ketawa, suka gibah,
+                    dan tetap jadi manusia anto
+                    yang entah kenapa bisa punya tempat
+                    di cerita hidupku.
+                </p>
+
+                <p>
+                    And please,
+                    jangan lupa bahagia.
+                </p>
+
+                <h2>
+                    Happy birthday once again, kambing 🐐
+                </h2>
+
+                <p class="signature">
+                    — From manusia yang ga ngeselin 😌☝️
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

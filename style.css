@@ -1,0 +1,1878 @@
+/* =========================================================
+   FONT & BASIC RESET
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f8f1ec;
+    color: #4b3a36;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+.page {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.025);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.page.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    opacity: 0.55;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.main-btn,
+.next-btn,
+.blow-btn {
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+
+    background: #4b3a36;
+    color: #fff;
+
+    cursor: pointer;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.main-btn:hover,
+.next-btn:hover,
+.blow-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(60, 40, 30, 0.18);
+}
+
+.main-btn:active,
+.next-btn:active,
+.blow-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+.music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    border: 1px solid #d8c5bc;
+
+    background: rgba(255, 255, 255, 0.75);
+    color: #4b3a36;
+
+    cursor: pointer;
+
+    z-index: 5000;
+
+    font-size: 18px;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s;
+}
+
+.music-btn:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   PAGE 1 — OPENING
+========================================================= */
+
+#page1 {
+    background:
+        radial-gradient(
+            circle at center,
+            #fffaf7 0%,
+            #f7e9e1 100%
+        );
+}
+
+.opening {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.little-text {
+    font-size: 12px;
+    letter-spacing: 3px;
+    opacity: 0.55;
+    margin-bottom: 20px;
+}
+
+.opening h1 {
+    font-size: clamp(60px, 11vw, 120px);
+    font-style: italic;
+    line-height: 1.1;
+}
+
+.opening::after {
+    content: "♡";
+    display: block;
+    font-size: 30px;
+    margin-top: 20px;
+    opacity: 0.45;
+}
+
+.opening .main-btn {
+    margin-top: 35px;
+}
+
+
+/* =========================================================
+   PAGE 2 — PASSWORD
+========================================================= */
+
+#page2 {
+    background:
+        linear-gradient(
+            135deg,
+            #f8eee9,
+            #eee0d8
+        );
+}
+
+.password-box {
+    width: min(480px, 90vw);
+    padding: 55px 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.58);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 60px rgba(80, 50, 40, 0.1);
+
+    backdrop-filter: blur(12px);
+}
+
+.lock {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.password-box h2 {
+    font-size: 30px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.password-box > p {
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+.password-box input {
+    display: block;
+
+    width: 230px;
+    max-width: 100%;
+
+    margin: 22px auto;
+
+    padding: 14px 18px;
+
+    border-radius: 25px;
+    border: 1px solid #d9c5bc;
+
+    background: #fffaf7;
+    color: #4b3a36;
+
+    outline: none;
+
+    text-align: center;
+
+    font-family: inherit;
+    letter-spacing: 4px;
+    font-size: 15px;
+}
+
+.password-box input:focus {
+    border-color: #a98a7f;
+
+    box-shadow:
+        0 0 0 3px rgba(169, 138, 127, 0.12);
+}
+
+.password-box .main-btn {
+    margin-top: 5px;
+}
+
+.error {
+    color: #b85b5b;
+    margin-top: 15px;
+    min-height: 20px;
+}
+
+
+/* =========================================================
+   PAGE 3 — LOADING
+========================================================= */
+
+#page3 {
+    background:
+        radial-gradient(
+            circle,
+            #fffaf7,
+            #f3e3da
+        );
+}
+
+.loading-page {
+    width: 90%;
+    text-align: center;
+}
+
+.loading-page h1 {
+    font-size: clamp(55px, 9vw, 85px);
+    font-style: italic;
+}
+
+.cake {
+    font-size: 110px;
+    margin: 30px 0;
+
+    animation:
+        cakeFloat 2s infinite ease-in-out;
+}
+
+.loading-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.loading-dots span {
+    width: 8px;
+    height: 8px;
+
+    background: #8d7067;
+
+    border-radius: 50%;
+
+    animation:
+        loading 1.2s infinite;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.loading-page p {
+    margin-top: 18px;
+
+    opacity: 0.55;
+
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   PAGE 3.5 — OCTOBER 2026 CALENDAR
+========================================================= */
+
+#calendarPage {
+    background:
+        radial-gradient(
+            circle at center,
+            #fffaf7,
+            #f2e4dc
+        );
+}
+
+.calendar-page {
+    width: 100%;
+    height: 100vh;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ---------- TITLE ---------- */
+
+.calendar-page h1 {
+    font-size: clamp(38px, 7vw, 58px);
+
+    margin-bottom: 10px;
+
+    font-style: italic;
+}
+
+.calendar-subtitle {
+    font-size: 14px;
+    opacity: 0.55;
+    margin-bottom: 30px;
+}
+
+
+/* ---------- CALENDAR BOX ---------- */
+
+.calendar-box {
+    width: min(500px, 92vw);
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 60px rgba(70, 45, 35, 0.12);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* ---------- CALENDAR HEADER ---------- */
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 10px 20px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size: 22px;
+}
+
+
+/* ---------- WEEK DAYS ---------- */
+
+.calendar-weekdays {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    margin-bottom: 10px;
+}
+
+.calendar-weekdays span {
+    font-size: 11px;
+    letter-spacing: 1px;
+    opacity: 0.5;
+}
+
+
+/* ---------- DATE GRID ---------- */
+
+.calendar-days {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 7px;
+}
+
+.calendar-days > span {
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    font-size: 14px;
+
+    border-radius: 50%;
+
+    transition: 0.3s ease;
+}
+
+.calendar-days > span:not(.empty):hover {
+    background: #f0ded5;
+    transform: scale(1.08);
+}
+
+
+/* ---------- EMPTY DATES ---------- */
+
+.calendar-days .empty {
+    pointer-events: none;
+}
+
+
+/* ---------- SPECIAL DATE 17 ---------- */
+
+.calendar-days .special-day {
+    background: transparent;
+
+    flex-direction: column;
+
+    gap: 0;
+}
+
+.circle-date {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid #8d7067;
+
+    border-radius: 50%;
+
+    font-weight: 600;
+
+    position: relative;
+
+    animation:
+        birthdayPulse 2s infinite ease-in-out;
+}
+
+
+/* Heart kecil di bawah angka 17 */
+
+.special-day small {
+    position: absolute;
+
+    bottom: -3px;
+
+    font-size: 13px;
+
+    background: #fffaf7;
+
+    padding: 0 3px;
+}
+
+
+/* ---------- SPECIAL DATE TEXT ---------- */
+
+.special-date {
+    margin-top: 25px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-style: italic;
+
+    font-size: 16px;
+
+    opacity: 0.75;
+}
+
+
+/* ---------- ANIMATION ---------- */
+
+@keyframes birthdayPulse {
+    0%,
+    100% {
+        transform: scale(1);
+
+        box-shadow:
+            0 0 0 rgba(141, 112, 103, 0);
+    }
+
+    50% {
+        transform: scale(1.08);
+
+        box-shadow:
+            0 0 0 8px rgba(141, 112, 103, 0.08);
+    }
+}
+
+
+/* ---------- CALENDAR MOBILE ---------- */
+
+@media (max-width: 700px) {
+
+    .calendar-page {
+        padding: 50px 15px 40px;
+    }
+
+    .calendar-page h1 {
+        font-size: 38px;
+    }
+
+    .calendar-subtitle {
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+
+    .calendar-box {
+        width: 94vw;
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .calendar-header {
+        font-size: 19px;
+        padding-bottom: 15px;
+    }
+
+    .calendar-weekdays span {
+        font-size: 9px;
+    }
+
+    .calendar-days {
+        gap: 4px;
+    }
+
+    .calendar-days > span {
+        font-size: 12px;
+    }
+
+    .circle-date {
+        width: 36px;
+        height: 36px;
+    }
+
+    .special-day small {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   PAGE 4 — FIRST LETTER
+========================================================= */
+
+#page4 {
+    background:
+        radial-gradient(
+            circle at center,
+            #fffaf7,
+            #f3e5dd
+        );
+}
+
+.letter-page {
+    width: 100%;
+    height: 100vh;
+
+    padding: 80px 25px 50px;
+
+    text-align: center;
+
+    overflow-y: auto;
+
+    display: block;
+}
+
+.letter-page > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.letter-page h1 {
+    font-size: clamp(28px, 5vw, 42px);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelope {
+    width: 280px;
+    height: 180px;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    background: #e5cfc4;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 25px 50px rgba(60, 40, 30, 0.15);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.envelope:hover {
+    transform:
+        translateY(-8px)
+        rotate(-1deg);
+
+    box-shadow:
+        0 35px 60px rgba(60, 40, 30, 0.18);
+}
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        140px solid transparent;
+
+    border-right:
+        140px solid transparent;
+
+    border-top:
+        100px solid #cdb1a4;
+}
+
+.envelope-heart {
+    position: absolute;
+
+    left: 50%;
+    top: 65px;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 40px;
+}
+
+.click-hint {
+    margin-top: 15px;
+
+    opacity: 0.5;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FIRST LETTER PAPER
+========================================================= */
+
+.letter-paper {
+    display: none;
+
+    width: min(700px, 90vw);
+
+    max-height: 62vh;
+
+    margin: 30px auto 20px;
+
+    padding: 40px 45px;
+
+    background: #fffdf9;
+
+    border-radius: 8px;
+
+    text-align: left;
+
+    line-height: 1.9;
+
+    font-size: 15px;
+
+    box-shadow:
+        0 25px 60px rgba(60, 40, 30, 0.12);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+
+    animation:
+        paperOpen 0.8s ease;
+}
+
+
+/* Scrollbar surat */
+
+.letter-paper::-webkit-scrollbar {
+    width: 6px;
+}
+
+.letter-paper::-webkit-scrollbar-track {
+    background: #f3e8e2;
+    border-radius: 10px;
+}
+
+.letter-paper::-webkit-scrollbar-thumb {
+    background: #c9aaa0;
+    border-radius: 10px;
+}
+
+.letter-paper::-webkit-scrollbar-thumb:hover {
+    background: #a8897e;
+}
+
+.letter-paper h2 {
+    font-size: 28px;
+
+    margin-bottom: 25px;
+
+    line-height: 1.3;
+}
+
+#typedLetter1 {
+    white-space: normal;
+}
+
+
+/* =========================================================
+   PAGE 5 — MEMORY
+========================================================= */
+
+#page5 {
+    background: #f7eee9;
+}
+
+.memory-page {
+    width: 100%;
+    height: 100vh;
+
+    padding: 65px 30px 60px;
+
+    text-align: center;
+
+    overflow-y: auto;
+}
+
+.memory-page h1 {
+    font-size: clamp(30px, 5vw, 42px);
+}
+
+.memory-sub {
+    opacity: 0.55;
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   POLAROID WALL
+========================================================= */
+
+.polaroid-wall {
+    width: min(1000px, 100%);
+
+    margin: 50px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 28px;
+}
+
+.polaroid {
+    background: #fff;
+
+    padding: 10px;
+    padding-bottom: 24px;
+
+    box-shadow:
+        0 15px 30px rgba(60, 40, 30, 0.12);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.polaroid img {
+    display: block;
+
+    width: 100%;
+    height: 170px;
+
+    object-fit: cover;
+}
+
+.polaroid span {
+    display: block;
+
+    margin-top: 12px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-style: italic;
+
+    font-size: 13px;
+}
+
+.photo1 {
+    transform: rotate(-5deg);
+}
+
+.photo2 {
+    transform: rotate(4deg);
+}
+
+.photo3 {
+    transform: rotate(-3deg);
+}
+
+.photo4 {
+    transform: rotate(5deg);
+}
+
+.photo5 {
+    transform: rotate(3deg);
+}
+
+.photo6 {
+    transform: rotate(-4deg);
+}
+
+.photo7 {
+    transform: rotate(4deg);
+}
+
+.photo8 {
+    transform: rotate(-5deg);
+}
+
+.polaroid:hover {
+    transform:
+        translateY(-12px)
+        rotate(0deg)
+        scale(1.04);
+
+    box-shadow:
+        0 25px 45px rgba(60, 40, 30, 0.16);
+}
+
+
+/* =========================================================
+   PAGE 6 — SECOND LETTER
+========================================================= */
+
+#page6 {
+    background:
+        radial-gradient(
+            circle at center,
+            #fffaf7,
+            #f1e4dc
+        );
+}
+
+.second-letter {
+    width: 100%;
+    height: 100vh;
+
+    padding: 70px 25px 50px;
+
+    text-align: center;
+
+    overflow-y: auto;
+
+    display: block;
+}
+
+.second-letter > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   SECOND LETTER PAPER
+========================================================= */
+
+.paper {
+    width: min(800px, 90vw);
+
+    max-height: 62vh;
+
+    padding: 45px 50px;
+
+    background: #fffdf9;
+
+    border-radius: 8px;
+
+    text-align: left;
+
+    line-height: 1.9;
+
+    font-size: 15px;
+
+    box-shadow:
+        0 20px 50px rgba(60, 40, 30, 0.1);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scroll-behavior: smooth;
+}
+
+
+/* Scrollbar Page 6 */
+
+.paper::-webkit-scrollbar {
+    width: 6px;
+}
+
+.paper::-webkit-scrollbar-track {
+    background: #f3e8e2;
+    border-radius: 10px;
+}
+
+.paper::-webkit-scrollbar-thumb {
+    background: #c9aaa0;
+    border-radius: 10px;
+}
+
+.paper::-webkit-scrollbar-thumb:hover {
+    background: #a8897e;
+}
+
+.paper h2 {
+    font-size: 28px;
+
+    margin-bottom: 30px;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   PAGE 7 — WISH
+========================================================= */
+
+#page7 {
+    background:
+        radial-gradient(
+            circle at center,
+            #fffaf7,
+            #f2e1d9
+        );
+}
+
+.wish-page {
+    width: 100%;
+    height: 100vh;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    overflow-y: auto;
+}
+
+#wishIntro {
+    font-size: clamp(28px, 5vw, 38px);
+
+    margin-bottom: 10px;
+}
+
+.wish-page > p {
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   CAKE
+========================================================= */
+
+.birthday-cake {
+    width: 300px;
+
+    margin: 50px auto 25px;
+
+    position: relative;
+}
+
+.cake-top {
+    min-height: 55px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+}
+
+.cake-body {
+    height: 120px;
+
+    border-radius:
+        15px 15px 25px 25px;
+
+    background:
+        linear-gradient(
+            #d9aaa0,
+            #bd8176
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size: 50px;
+
+    color: white;
+
+    box-shadow:
+        0 15px 30px rgba(80, 50, 40, 0.15);
+}
+
+
+/* =========================================================
+   CANDLES
+========================================================= */
+
+.candle {
+    width: 9px;
+    height: 38px;
+
+    background: #fff;
+
+    border-radius: 5px;
+
+    position: relative;
+
+    margin-top: 10px;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+.candle::after {
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: #f3a44b;
+
+    top: -14px;
+    left: -1px;
+
+    box-shadow:
+        0 0 12px #f4a94c;
+
+    animation:
+        flame 0.8s infinite alternate;
+}
+
+.candle.off::after {
+    display: none;
+}
+
+.candle.off {
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   WISH TEXT
+========================================================= */
+
+.wish-text {
+    margin-top: 20px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size: 25px;
+
+    min-height: 60px;
+}
+
+.countdown {
+    min-height: 60px;
+
+    font-size: 40px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    margin-top: 15px;
+}
+
+.wish-result {
+    display: none;
+
+    margin-top: 30px;
+
+    animation:
+        fadeUp 0.8s ease;
+}
+
+.wish-result h2 {
+    font-size: clamp(32px, 6vw, 45px);
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   PAGE 8 — FINAL
+========================================================= */
+
+#page8 {
+    background:
+        radial-gradient(
+            circle at center,
+            #55433e,
+            #302522
+        );
+
+    color: #fffaf7;
+}
+
+.final-page {
+    width: 100%;
+    height: 100vh;
+
+    padding: 65px 25px 70px;
+
+    text-align: center;
+
+    overflow-y: auto;
+}
+
+.final-sparkle {
+    font-size: 45px;
+
+    animation:
+        sparkle 2s infinite;
+}
+
+.final-page h1 {
+    font-size: clamp(42px, 7vw, 60px);
+
+    margin: 15px 0 35px;
+}
+
+.final-letter {
+    width: min(650px, 100%);
+
+    margin: auto;
+
+    line-height: 2;
+
+    font-size: 15px;
+}
+
+.final-letter p {
+    margin-bottom: 25px;
+
+    opacity: 0.88;
+}
+
+.dramatic {
+    font-size: 30px;
+}
+
+.joke {
+    font-size: 24px;
+
+    font-weight: 600;
+
+    opacity: 1 !important;
+}
+
+.final-letter h2 {
+    margin-top: 40px;
+
+    font-size: 30px;
+}
+
+.signature {
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-style: italic;
+
+    margin-top: 35px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes cakeFloat {
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+}
+
+@keyframes loading {
+    0%,
+    100% {
+        transform:
+            translateY(0);
+
+        opacity: 0.3;
+    }
+
+    50% {
+        transform:
+            translateY(-7px);
+
+        opacity: 1;
+    }
+}
+
+@keyframes paperOpen {
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.85)
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes sparkle {
+    0%,
+    100% {
+        transform:
+            scale(1);
+
+        opacity: 0.5;
+    }
+
+    50% {
+        transform:
+            scale(1.3);
+
+        opacity: 1;
+    }
+}
+
+@keyframes flame {
+    from {
+        transform:
+            scale(1)
+            rotate(-3deg);
+    }
+
+    to {
+        transform:
+            scale(1.12)
+            rotate(3deg);
+    }
+}
+
+
+/* =========================================================
+   MOBILE / PHONE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* ---------- OPENING ---------- */
+
+    .opening h1 {
+        font-size: 65px;
+        line-height: 1.05;
+    }
+
+
+    /* ---------- PASSWORD ---------- */
+
+    .password-box {
+        width: 90vw;
+
+        padding:
+            40px 25px;
+    }
+
+    .password-box h2 {
+        font-size: 25px;
+    }
+
+
+    /* ---------- LOADING ---------- */
+
+    .loading-page h1 {
+        font-size: 55px;
+    }
+
+    .cake {
+        font-size: 90px;
+    }
+
+
+    /* ---------- PAGE 4 ---------- */
+
+    .letter-page {
+        padding:
+            70px 15px 40px;
+    }
+
+    .letter-page h1 {
+        font-size: 29px;
+        margin-bottom: 25px;
+    }
+
+    .envelope {
+        width: 250px;
+        height: 160px;
+    }
+
+    .envelope-flap {
+        border-left-width: 125px;
+        border-right-width: 125px;
+        border-top-width: 90px;
+    }
+
+    .envelope-heart {
+        top: 57px;
+    }
+
+    .letter-paper {
+        width: 90vw;
+
+        max-height: 60vh;
+
+        padding:
+            28px 23px;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .letter-paper h2 {
+        font-size: 23px;
+    }
+
+
+    /* ---------- PAGE 5 ---------- */
+
+    .memory-page {
+        padding:
+            65px 18px 50px;
+    }
+
+    .memory-page h1 {
+        font-size: 30px;
+    }
+
+    .polaroid-wall {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 18px;
+
+        margin-top: 40px;
+    }
+
+    .polaroid {
+        padding: 7px;
+        padding-bottom: 17px;
+    }
+
+    .polaroid img {
+        height: 125px;
+    }
+
+    .polaroid span {
+        font-size: 11px;
+        margin-top: 8px;
+    }
+
+
+    /* ---------- PAGE 6 ---------- */
+
+    .second-letter {
+        padding:
+            70px 15px 40px;
+    }
+
+    .paper {
+        width: 90vw;
+
+        max-height: 60vh;
+
+        padding:
+            28px 23px;
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .paper h2 {
+        font-size: 23px;
+    }
+
+
+    /* ---------- PAGE 7 ---------- */
+
+    .wish-page {
+        padding:
+            60px 15px 40px;
+    }
+
+    .birthday-cake {
+        width: 260px;
+
+        margin-top: 40px;
+    }
+
+    .cake-body {
+        height: 105px;
+        font-size: 45px;
+    }
+
+    .candle {
+        width: 7px;
+        height: 35px;
+    }
+
+    .candle::after {
+        width: 8px;
+        height: 13px;
+        left: -1px;
+    }
+
+    .wish-text {
+        font-size: 21px;
+    }
+
+    .countdown {
+        font-size: 32px;
+    }
+
+
+    /* ---------- PAGE 8 ---------- */
+
+    .final-page {
+        padding:
+            65px 20px 60px;
+    }
+
+    .final-letter {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .joke {
+        font-size: 21px;
+    }
+
+    .final-letter h2 {
+        font-size: 25px;
+    }
+}
+
+/* =========================================================
+   MEMORY ALBUM — PAGE 5
+========================================================= */
+
+.album {
+    width: 100%;
+    max-width: 900px;
+    margin: 35px auto 20px;
+    position: relative;
+}
+
+/* ================= ALBUM PAGE ================= */
+
+.album-page {
+    display: none;
+    width: 100%;
+    animation: albumFade 0.5s ease;
+}
+
+.album-page.active-album {
+    display: block;
+}
+
+@keyframes albumFade {
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ================= ALBUM TITLE ================= */
+
+.album-title {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+
+/* ================= PHOTO WALL ================= */
+
+.album .polaroid-wall {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+
+/* ================= POLAROID ================= */
+
+.album .polaroid {
+    background: #fff;
+    padding: 10px 10px 18px;
+    width: 170px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.album .polaroid:hover {
+    transform: translateY(-8px) rotate(0deg) !important;
+}
+
+
+/* ================= PHOTO ================= */
+
+.album .polaroid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ================= CAPTION ================= */
+
+.album .polaroid span {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 13px;
+}
+
+
+/* ================= RANDOM POLAROID ANGLES ================= */
+
+.album-page:nth-child(1) .polaroid:nth-child(1) {
+    transform: rotate(-4deg);
+}
+
+.album-page:nth-child(1) .polaroid:nth-child(2) {
+    transform: rotate(3deg);
+}
+
+.album-page:nth-child(1) .polaroid:nth-child(3) {
+    transform: rotate(-2deg);
+}
+
+.album-page:nth-child(1) .polaroid:nth-child(4) {
+    transform: rotate(4deg);
+}
+
+.album-page:nth-child(2) .polaroid:nth-child(1) {
+    transform: rotate(3deg);
+}
+
+.album-page:nth-child(2) .polaroid:nth-child(2) {
+    transform: rotate(-4deg);
+}
+
+.album-page:nth-child(2) .polaroid:nth-child(3) {
+    transform: rotate(2deg);
+}
+
+.album-page:nth-child(2) .polaroid:nth-child(4) {
+    transform: rotate(-3deg);
+}
+
+.album-page:nth-child(3) .polaroid:nth-child(1) {
+    transform: rotate(-3deg);
+}
+
+.album-page:nth-child(3) .polaroid:nth-child(2) {
+    transform: rotate(4deg);
+}
+
+.album-page:nth-child(3) .polaroid:nth-child(3) {
+    transform: rotate(-2deg);
+}
+
+.album-page:nth-child(3) .polaroid:nth-child(4) {
+    transform: rotate(3deg);
+}
+
+.album-page:nth-child(4) .polaroid:nth-child(1) {
+    transform: rotate(4deg);
+}
+
+.album-page:nth-child(4) .polaroid:nth-child(2) {
+    transform: rotate(-3deg);
+}
+
+.album-page:nth-child(4) .polaroid:nth-child(3) {
+    transform: rotate(2deg);
+}
+
+.album-page:nth-child(4) .polaroid:nth-child(4) {
+    transform: rotate(-4deg);
+}
+
+
+/* ================= LAST PAGE ================= */
+
+.last-album {
+    text-align: center;
+}
+
+.final-memory {
+    margin: 0 auto 25px;
+    width: 210px;
+    background: #fff;
+    padding: 12px 12px 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: rotate(-3deg);
+}
+
+.final-memory img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.final-memory span {
+    display: block;
+    margin-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 13px;
+}
+
+.favorite-memory {
+    margin: 0 auto;
+    max-width: 260px;
+}
+
+.favorite-memory img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    padding: 8px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.favorite-memory p {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+
+/* ================= ALBUM BUTTONS ================= */
+
+.album-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin: 25px 0;
+}
+
+.album-btn {
+    border: none;
+    background: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 5px 12px;
+    transition: transform 0.2s ease;
+}
+
+.album-btn:hover {
+    transform: scale(1.2);
+}
+
+#albumPageNumber {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+/* ================= CONTINUE BUTTON ================= */
+
+.album-continue {
+    display: none;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .album .polaroid-wall {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .album .polaroid {
+        width: 135px;
+    }
+
+    .album .polaroid img {
+        height: 125px;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .album .polaroid {
+        width: 120px;
+    }
+
+    .album .polaroid img {
+        height: 110px;
+    }
+
+}
